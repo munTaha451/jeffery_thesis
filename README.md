@@ -1,0 +1,51 @@
+# Orientation Dynamics and Rotational Charateristics of Ellipsoidal Particles in Simple Shear Flow
+
+Undergraduate thesis repository — Muntaha Islam, Northwestern Polytechnical University.
+
+## Physical model
+
+A rigid, axisymmetric prolate spheroid (aspect ratio r) is suspended in an
+incompressible Newtonian fluid under steady simple shear flow
+
+    u = (γ̇ y, 0, 0)
+
+in the Stokes regime (Re ≪ 1, zero particle inertia). The in-plane orientation
+angle θ obeys the Jeffery equation
+
+    dθ/dt = −(γ̇/2)[1 − λ cos(2θ)],   λ = (r² − 1)/(r² + 1).
+
+Because the symmetry axis is undirected, orientations live on
+−π/2 ≤ θ < π/2, and the axis period is
+
+    T_axis = π (r + 1/r) / |γ̇|.
+
+## Requirements
+
+Python ≥ 3.10. Install dependencies with:
+
+    pip install -r requirements.txt
+
+## How to reproduce the results
+
+    python scripts/run_case_A.py
+    python scripts/run_case_B.py
+    python scripts/run_case_C.py
+    python scripts/make_figures.py
+
+## Output files
+
+| File | Description |
+|---|---|
+| figures/F01_shear_profile.png | Linear shear velocity profile |
+| figures/F02_case_A.png | θ(t), dθ/dt for Case A (r=2, γ̇=1) |
+| figures/F03_case_B.png | Aspect-ratio comparison |
+| figures/F04_case_C.png | Shear-rate scaling collapse |
+
+## AI assistance disclosure
+
+[To be completed — briefly state which AI tools were used, for what,
+and confirm that all equations, code, and results were independently checked.]
+
+## License
+
+MIT 
