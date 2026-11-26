@@ -19,6 +19,18 @@ Because the symmetry axis is undirected, orientations live on
 
     T_axis = π (r + 1/r) / |γ̇|.
 
+## Orientation statistics
+
+From the periodic solution, the code computes three time-averaged
+quantities and compares them with their analytic forms:
+
+- orientation density p(θ) = √(1−λ²) / {π[1 − λ cos 2θ]}, normalized on −π/2 ≤ θ < π/2;
+- order parameter S = ⟨cos 2θ⟩ = (r−1)/(r+1);
+- dwell fraction P₁₅°, the time within ±15° of the flow axis, = (2/π) arctan[r tan 15°].
+
+Samples are taken at uniform time intervals over several complete periods,
+so the histogram is the true time-weighted density.
+
 ## Requirements
 
 Python ≥ 3.10. Install dependencies with:
@@ -27,10 +39,13 @@ Python ≥ 3.10. Install dependencies with:
 
 ## How to reproduce the results
 
-    python scripts/run_case_A.py
-    python scripts/run_case_B.py
-    python scripts/run_case_C.py
-    python scripts/make_figures.py
+Run the scripts from the repository root:
+
+    python scripts/solve_jeffery.py
+    python scripts/Shear.py
+    python scripts/Case_B.py
+    python scripts/case_C.py
+    python scripts/orientation_statistics.py
 
 ## Output files
 
@@ -40,6 +55,8 @@ Python ≥ 3.10. Install dependencies with:
 | figures/F02_case_A.png | θ(t), dθ/dt for Case A (r=2, γ̇=1) |
 | figures/F03_case_B.png | Aspect-ratio comparison |
 | figures/F04_case_C.png | Shear-rate scaling collapse |
+| figures/F05_orientation_density.png | Numerical vs analytic p(θ), r = 2 and 5 |
+| figures/F06_S_vsP(15).png | S and P₁₅° vs aspect ratio |
 
 ## AI assistance disclosure
 
